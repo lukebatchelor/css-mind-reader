@@ -40,13 +40,13 @@ input[type=radio] {
 #cur-page-reveal-3:checked~.page-reveal-3,
 #cur-page-memorise-4:checked~.page-memorise-4,
 #cur-page-ready-4:checked~.page-ready-4,
-#cur-page-reveal-4:checked~.page-reveal-4
+#cur-page-reveal-4:checked~.page-reveal-4,
 #cur-page-memorise-5:checked~.page-memorise-5,
 #cur-page-ready-5:checked~.page-ready-5,
-#cur-page-reveal-5:checked~.page-reveal-5
+#cur-page-reveal-5:checked~.page-reveal-5,
 #cur-page-memorise-6:checked~.page-memorise-6,
 #cur-page-ready-6:checked~.page-ready-6,
-#cur-page-reveal-6:checked~.page-reveal-6
+#cur-page-reveal-6:checked~.page-reveal-6,
 #cur-page-memorise-7:checked~.page-memorise-7,
 #cur-page-ready-7:checked~.page-ready-7,
 #cur-page-reveal-7:checked~.page-reveal-7
@@ -108,25 +108,25 @@ label[for="cur-page-memorise-0"] {
 }
 /* todo: generate these */
 label[for="cur-page-memorise-1"] {
-  animation: toggleVisible 4s steps(1, end) 0.5s infinite;
+  animation: toggleVisible 2s steps(1, end) 0.25s infinite;
 }
 label[for="cur-page-memorise-2"] {
-  animation: toggleVisible 4s steps(1, end) 1s infinite;
+  animation: toggleVisible 2s steps(1, end) 0.5s infinite;
 }
 label[for="cur-page-memorise-3"] {
-  animation: toggleVisible 4s steps(1, end) 1.5s infinite;
+  animation: toggleVisible 2s steps(1, end) 0.75s infinite;
 }
 label[for="cur-page-memorise-4"] {
-  animation: toggleVisible 4s steps(1, end) 2s infinite;
+  animation: toggleVisible 2s steps(1, end) 1s infinite;
 }
 label[for="cur-page-memorise-5"] {
-  animation: toggleVisible 4s steps(1, end) 2.5s infinite;
+  animation: toggleVisible 2s steps(1, end) 1.25s infinite;
 }
 label[for="cur-page-memorise-6"] {
-  animation: toggleVisible 4s steps(1, end) 3s infinite;
+  animation: toggleVisible 2s steps(1, end) 1.5s infinite;
 }
 label[for="cur-page-memorise-7"] {
-  animation: toggleVisible 4s steps(1, end) 3.5s infinite;
+  animation: toggleVisible 2s steps(1, end) 1.75s infinite;
 }
 
 @keyframes toggleVisible {
