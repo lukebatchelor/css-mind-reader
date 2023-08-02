@@ -24,7 +24,7 @@ const insertRowsMarker = "<!-- Insert Rows -->";
 const insertEmojiMarker = "<!-- Insert Emoji -->";
 const emojisStr = "😜🥰😂😁🤣🥹🤨🥳🥸😍😎😫😔🤩🤯😱😭😳🤔😮😵🫣🤤🥴😐";
 const emojis = [...emojisStr];
-const numTimesToDuplicate = 4;
+const numTimesToDuplicate = 8;
 const chosenEmojis = [];
 
 // first find the chosenEmojis
