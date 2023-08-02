@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Mind Reader</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <input type="radio" name="cur-page" id="cur-page-landing" checked />
+    <input type="radio" name="cur-page" id="cur-page-think-number" />
+    <input type="radio" name="cur-page" id="cur-page-times-5" />
+    <input type="radio" name="cur-page" id="cur-page-times-2" />
+    <input type="radio" name="cur-page" id="cur-page-minus-original" />
+    <input type="radio" name="cur-page" id="cur-page-memorise" />
+    <input type="radio" name="cur-page" id="cur-page-ready" />
+    <input type="radio" name="cur-page" id="cur-page-reveal" />
+    <div class="page page-landing">
+      <div class="instructions">
+        <p>
+          This is the world's first mind reading app written <i>entirely</i> in
+          HTML and CSS.
+        </p>
+        <p>Absolutely no Javascript!</p>
+        <p>Click below to get started</p>
+        <div>
+          <label for="cur-page-think-number">Let's Go!</label>
+        </div>
+      </div>
+    </div>
+    <div class="page page-think-number">
+      <div class="instructions">
+        <p>First. You'll need to think of a whole number between 1 and 10</p>
+        <p>Any number!</p>
+        <p>Tell me when you're ready</p>
+        <div>
+          <label for="cur-page-times-5">I'm ready!</label>
+        </div>
+      </div>
+    </div>
+    <div class="page page-times-5">
+      <div class="instructions">
+        <p>Now, take your number and times it by 5</p>
+        <p>Take your time</p>
+        <p>Numbers are hard</p>
+        <div>
+          <label for="cur-page-times-2">Got it</label>
+        </div>
+      </div>
+    </div>
+    <div class="page page-times-2">
+      <div class="instructions">
+        <p>Great! Now take that number...</p>
+        <p>And times it by 2...</p>
+        <p>This is an easy one!</p>
+        <div>
+          <label for="cur-page-minus-original">Done</label>
+        </div>
+      </div>
+    </div>
+    <div class="page page-minus-original">
+      <div class="instructions">
+        <p>Just one more bit of math...</p>
+        <p>
+          Take your current number, and minus the original number you thought of
+        </p>
+        <p>I believe in you</p>
+        <div>
+          <label for="cur-page-memorise">Okay</label>
+        </div>
+      </div>
+    </div>
+    <div class="page page-memorise">
+      <div class="instructions">
+        Now find your number... Memorise it's emoji...
+      </div>
+      <div class="emoji-container">
+        <!-- Insert Rows -->
+      </div>
+      <label for="cur-page-ready">Seriously? Fine, done!</label>
+      <div></div>
+    </div>
+    <div class="page page-ready">
+      <div class="instructions">
+        <p>Okay, it's time...</p>
+        <p>Think about your emoji very carefully...</p>
+        <p>Picture it in your mind...</p>
+        <div>
+          <label for="cur-page-reveal">Just read my mind already!</label>
+        </div>
+      </div>
+    </div>
+    <div class="page page-reveal">
+      <div class="instructions">
+        <p>Was <i>THIS</i> your emoji?!?!</p>
+        <h1 class="emoji-reveal">
+          &nbsp;
+          <!-- Insert Emoji -->
+          &nbsp;
+        </h1>
+      </div>
+    </div>
+  </body>
+</html>

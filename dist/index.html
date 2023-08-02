@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Mind Reader</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <input type="radio" name="cur-page" id="cur-page-landing" checked />
+    <input type="radio" name="cur-page" id="cur-page-think-number" />
+    <input type="radio" name="cur-page" id="cur-page-times-5" />
+    <input type="radio" name="cur-page" id="cur-page-times-2" />
+    <input type="radio" name="cur-page" id="cur-page-minus-original" />
+    <input type="radio" name="cur-page" id="cur-page-memorise" />
+    <input type="radio" name="cur-page" id="cur-page-ready" />
+    <input type="radio" name="cur-page" id="cur-page-reveal" />
+    <div class="page page-landing">
+      <div class="instructions">
+        <p>
+          This is the world's first mind reading app written <i>entirely</i> in
+          HTML and CSS.
+        </p>
+        <p>Absolutely no Javascript!</p>
+        <p>Click below to get started</p>
+        <div>
+          <label for="cur-page-think-number">Let's Go!</label>
+        </div>
+      </div>
+    </div>
+    <div class="page page-think-number">
+      <div class="instructions">
+        <p>First. You'll need to think of a whole number between 1 and 10</p>
+        <p>Any number!</p>
+        <p>Tell me when you're ready</p>
+        <div>
+          <label for="cur-page-times-5">I'm ready!</label>
+        </div>
+      </div>
+    </div>
+    <div class="page page-times-5">
+      <div class="instructions">
+        <p>Now, take your number and times it by 5</p>
+        <p>Take your time</p>
+        <p>Numbers are hard</p>
+        <div>
+          <label for="cur-page-times-2">Got it</label>
+        </div>
+      </div>
+    </div>
+    <div class="page page-times-2">
+      <div class="instructions">
+        <p>Great! Now take that number...</p>
+        <p>And times it by 2...</p>
+        <p>This is an easy one!</p>
+        <div>
+          <label for="cur-page-minus-original">Done</label>
+        </div>
+      </div>
+    </div>
+    <div class="page page-minus-original">
+      <div class="instructions">
+        <p>Just one more bit of math...</p>
+        <p>
+          Take your current number, and minus the original number you thought of
+        </p>
+        <p>I believe in you</p>
+        <div>
+          <label for="cur-page-memorise">Okay</label>
+        </div>
+      </div>
+    </div>
+    <div class="page page-memorise">
+      <div class="instructions">
+        Now find your number... Memorise it's emoji...
+      </div>
+      <div class="emoji-container">
+      <div class="row">
+        <div class="cell">
+          <div class="emoji">😵</div>
+          <div class="label">1</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">😍</div>
+          <div class="label">2</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🤔</div>
+          <div class="label">3</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🤩</div>
+          <div class="label">4</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">😂</div>
+          <div class="label">5</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">😂</div>
+          <div class="label">6</div>
+        </div>
+</div>
+      <div class="row">
+        <div class="cell">
+          <div class="emoji">😮</div>
+          <div class="label">7</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">😔</div>
+          <div class="label">8</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🥳</div>
+          <div class="label">9</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">😜</div>
+          <div class="label">10</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🥳</div>
+          <div class="label">11</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">😍</div>
+          <div class="label">12</div>
+        </div>
+</div>
+      <div class="row">
+        <div class="cell">
+          <div class="emoji">🥰</div>
+          <div class="label">13</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🤨</div>
+          <div class="label">14</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🤩</div>
+          <div class="label">15</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🥸</div>
+          <div class="label">16</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🥸</div>
+          <div class="label">17</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🥳</div>
+          <div class="label">18</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🥸</div>
+          <div class="label">19</div>
+        </div>
+</div>
+      <div class="row">
+        <div class="cell">
+          <div class="emoji">😳</div>
+          <div class="label">20</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">😫</div>
+          <div class="label">21</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">😫</div>
+          <div class="label">22</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">😍</div>
+          <div class="label">23</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">😫</div>
+          <div class="label">24</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">😱</div>
+          <div class="label">25</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🤨</div>
+          <div class="label">26</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🥳</div>
+          <div class="label">27</div>
+        </div>
+</div>
+      <div class="row">
+        <div class="cell">
+          <div class="emoji">🤔</div>
+          <div class="label">28</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🤯</div>
+          <div class="label">29</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🤩</div>
+          <div class="label">30</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">😭</div>
+          <div class="label">31</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">😔</div>
+          <div class="label">32</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">😱</div>
+          <div class="label">33</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🤯</div>
+          <div class="label">34</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">😳</div>
+          <div class="label">35</div>
+        </div>
+</div>
+      <div class="row">
+        <div class="cell">
+          <div class="emoji">🥳</div>
+          <div class="label">36</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">😭</div>
+          <div class="label">37</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">😍</div>
+          <div class="label">38</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">😎</div>
+          <div class="label">39</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🥸</div>
+          <div class="label">40</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">😮</div>
+          <div class="label">41</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🤯</div>
+          <div class="label">42</div>
+        </div>
+</div>
+      <div class="row">
+        <div class="cell">
+          <div class="emoji">😎</div>
+          <div class="label">43</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">😍</div>
+          <div class="label">44</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🥳</div>
+          <div class="label">45</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🤣</div>
+          <div class="label">46</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🤩</div>
+          <div class="label">47</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🤨</div>
+          <div class="label">48</div>
+        </div>
+</div>
+      <div class="row">
+        <div class="cell">
+          <div class="emoji">😜</div>
+          <div class="label">49</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🥸</div>
+          <div class="label">50</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🥳</div>
+          <div class="label">51</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🥹</div>
+          <div class="label">52</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🤨</div>
+          <div class="label">53</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🥳</div>
+          <div class="label">54</div>
+        </div>
+</div>
+      <div class="row">
+        <div class="cell">
+          <div class="emoji">🤨</div>
+          <div class="label">55</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🥳</div>
+          <div class="label">56</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🤩</div>
+          <div class="label">57</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">😭</div>
+          <div class="label">58</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🥸</div>
+          <div class="label">59</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">😱</div>
+          <div class="label">60</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">😳</div>
+          <div class="label">61</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">😜</div>
+          <div class="label">62</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🥳</div>
+          <div class="label">63</div>
+        </div>
+</div>
+      <div class="row">
+        <div class="cell">
+          <div class="emoji">🥳</div>
+          <div class="label">64</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🤩</div>
+          <div class="label">65</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🤩</div>
+          <div class="label">66</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🤔</div>
+          <div class="label">67</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🤩</div>
+          <div class="label">68</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🤨</div>
+          <div class="label">69</div>
+        </div>
+</div>
+      <div class="row">
+        <div class="cell">
+          <div class="emoji">😫</div>
+          <div class="label">70</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">😜</div>
+          <div class="label">71</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🥳</div>
+          <div class="label">72</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">😫</div>
+          <div class="label">73</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">😫</div>
+          <div class="label">74</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">😭</div>
+          <div class="label">75</div>
+        </div>
+</div>
+      <div class="row">
+        <div class="cell">
+          <div class="emoji">😎</div>
+          <div class="label">76</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">😱</div>
+          <div class="label">77</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🤣</div>
+          <div class="label">78</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">😭</div>
+          <div class="label">79</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">😜</div>
+          <div class="label">80</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🥳</div>
+          <div class="label">81</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">😵</div>
+          <div class="label">82</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🤩</div>
+          <div class="label">83</div>
+        </div>
+</div>
+      <div class="row">
+        <div class="cell">
+          <div class="emoji">😁</div>
+          <div class="label">84</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">😫</div>
+          <div class="label">85</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">😵</div>
+          <div class="label">86</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🤯</div>
+          <div class="label">87</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🥳</div>
+          <div class="label">88</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🤨</div>
+          <div class="label">89</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🥳</div>
+          <div class="label">90</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🤣</div>
+          <div class="label">91</div>
+        </div>
+</div>
+      <div class="row">
+        <div class="cell">
+          <div class="emoji">😫</div>
+          <div class="label">92</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">😮</div>
+          <div class="label">93</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">😳</div>
+          <div class="label">94</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🥰</div>
+          <div class="label">95</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🤨</div>
+          <div class="label">96</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🥳</div>
+          <div class="label">97</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">😜</div>
+          <div class="label">98</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">🥳</div>
+          <div class="label">99</div>
+        </div>
+        <div class="cell">
+          <div class="emoji">😎</div>
+          <div class="label">100</div>
+        </div>
+</div>
+      </div>
+      <label for="cur-page-ready">Seriously? Fine, done!</label>
+      <div></div>
+    </div>
+    <div class="page page-ready">
+      <div class="instructions">
+        <p>Okay, it's time...</p>
+        <p>Think about your emoji very carefully...</p>
+        <p>Picture it in your mind...</p>
+        <div>
+          <label for="cur-page-reveal">Just read my mind already!</label>
+        </div>
+      </div>
+    </div>
+    <div class="page page-reveal">
+      <div class="instructions">
+        <p>Was <i>THIS</i> your emoji?!?!</p>
+        <h1 class="emoji-reveal">
+          &nbsp;
+🥳
+          &nbsp;
+        </h1>
+      </div>
+    </div>
+  </body>
+</html>
