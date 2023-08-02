@@ -23,9 +23,23 @@ input[type=radio] {
 #cur-page-times-5:checked~.page-times-5,
 #cur-page-times-2:checked~.page-times-2,
 #cur-page-minus-original:checked~.page-minus-original,
+#cur-page-memorise:checked~.page-memorise,
 #cur-page-ready:checked~.page-ready,
 #cur-page-reveal:checked~.page-reveal,
-#cur-page-memorise:checked~.page-memorise{
+/* todo: generate these */
+#cur-page-memorise-0:checked~.page-memorise-0,
+#cur-page-ready-0:checked~.page-ready-0,
+#cur-page-reveal-0:checked~.page-reveal-0,
+#cur-page-memorise-1:checked~.page-memorise-1,
+#cur-page-ready-1:checked~.page-ready-1,
+#cur-page-reveal-1:checked~.page-reveal-1,
+#cur-page-memorise-2:checked~.page-memorise-2,
+#cur-page-ready-2:checked~.page-ready-2,
+#cur-page-reveal-2:checked~.page-reveal-2,
+#cur-page-memorise-3:checked~.page-memorise-3,
+#cur-page-ready-3:checked~.page-ready-3,
+#cur-page-reveal-3:checked~.page-reveal-3
+{
   display: flex;
 }
 
@@ -65,4 +79,37 @@ input[type=radio] {
 label {
   color: aqua;
   font-weight: 600;
+}
+.random-button {
+  display: grid;
+}
+
+.random-button label {
+  place-self: center;
+  position: absolute;
+}
+
+label[for="cur-page-memorise-0"] {
+
+}
+label[for="cur-page-memorise-1"] {
+  animation: toggleVisible 2s steps(1, end) 0.5s infinite;
+  opacity: 0;
+  pointer-events: none;
+}
+label[for="cur-page-memorise-2"] {
+  animation: toggleVisible 2s steps(1, end) 1s infinite;
+  opacity: 0;
+  pointer-events: none;
+}
+label[for="cur-page-memorise-3"] {
+  animation: toggleVisible 2s steps(1, end) 1.5s infinite;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes toggleVisible {
+  0% { opacity: 1; pointer-events: initial; }
+  33% { opacity: 0; pointer-events: none; }
+  66% { opacity: 0; pointer-events: none; }
 }

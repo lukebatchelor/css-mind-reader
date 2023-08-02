@@ -16,56 +16,65 @@ if (fs.existsSync(distDir)) {
 }
 
 const htmlLines = srcHtmlStr.split("\n");
+let newHtmlLines = [];
+
+const beginDuplicationMarker = "<!-- Begin Duplication -->";
+const endDuplicationMarker = "<!-- End Duplication -->";
 const insertRowsMarker = "<!-- Insert Rows -->";
-const insertRowsLineIdx = htmlLines.findIndex((line) =>
-  line.includes(insertRowsMarker)
-);
-if (insertRowsLineIdx < 0) {
-  throw new Error(
-    `Unable to find Insert Rows marker in ${srcHtmlFile}: ${insertRowsMarker} `
-  );
-}
-
-// Add in all the emoji rows
-const totalCells = 100;
-let numCells = 0;
-const newLinesToAdd = [];
-const emojisStr = "😜🥰😂😁🤣🥹🤨🥳🥸😍😎😫😔🤩🤯😱😭😳🤔😮😵";
-const emojis = [...emojisStr];
-const chosenEmoji = randElement(emojis);
-console.log({ chosenEmoji });
-while (numCells < totalCells) {
-  // add random new cells between 4 and 9, unless that would put us over 100
-  const newCells = Math.min(randBetween(6, 9), totalCells - numCells);
-  console.log("Adding ", newCells, "new cells");
-  newLinesToAdd.push('      <div class="row">');
-  for (let i = 0; i < newCells; i++) {
-    const cellLabel = numCells + i + 1;
-    const cellEmoji = cellLabel % 9 === 0 ? chosenEmoji : randElement(emojis);
-    newLinesToAdd.push('        <div class="cell">');
-    newLinesToAdd.push(`          <div class="emoji">${cellEmoji}</div>`);
-    newLinesToAdd.push(`          <div class="label">${cellLabel}</div>`);
-    newLinesToAdd.push("        </div>");
-  }
-  newLinesToAdd.push("</div>");
-  numCells += newCells;
-}
-htmlLines.splice(insertRowsLineIdx, 1, ...newLinesToAdd);
-
-// add in the chosen emoji
 const insertEmojiMarker = "<!-- Insert Emoji -->";
-const insertEmojiLineIdx = htmlLines.findIndex((line) =>
-  line.includes(insertEmojiMarker)
-);
-if (insertRowsLineIdx < 0) {
-  throw new Error(
-    `Unable to find Insert Emoji marker in ${srcHtmlFile}: ${insertEmojiMarker} `
-  );
+const emojisStr = "😜🥰😂😁🤣🥹🤨🥳🥸😍😎😫😔🤩🤯😱😭😳🤔😮😵🫣🤤🥴😐";
+const emojis = [...emojisStr];
+const numTimesToDuplicate = 4;
+const chosenEmojis = [];
+
+// first find the chosenEmojis
+while (chosenEmojis.length < numTimesToDuplicate) {
+  const nextEmoji = randElement(emojis);
+  if (chosenEmojis.includes(nextEmoji)) continue;
+  chosenEmojis.push(nextEmoji);
 }
-htmlLines.splice(insertEmojiLineIdx, 1, chosenEmoji);
+console.log({ chosenEmojis });
+// next, we'll process each line of the html file one by one
+let curLineIdx = 0;
+let duplicationIdx = 0;
+let prevDuplicationBeginMarkerIdx = -1;
+while (curLineIdx < htmlLines.length) {
+  const line = htmlLines[curLineIdx];
+  if (line.includes(beginDuplicationMarker)) {
+    prevDuplicationBeginMarkerIdx = curLineIdx;
+    duplicationIdx = 0;
+  } else if (line.includes(endDuplicationMarker)) {
+    duplicationIdx += 1;
+    if (duplicationIdx !== numTimesToDuplicate) {
+      // we have not finished duplicating this block - go back to previous marker
+      curLineIdx = prevDuplicationBeginMarkerIdx;
+    }
+  } else if (line.includes(insertRowsMarker)) {
+    const newLinesToAdd = generateRowsHtmlLines(chosenEmojis[duplicationIdx]);
+    newHtmlLines = [...newHtmlLines, ...newLinesToAdd];
+  } else if (line.includes("page-memorise")) {
+    newHtmlLines.push(
+      line.replace("page-memorise", `page-memorise-${duplicationIdx}`)
+    );
+  } else if (line.includes("page-ready")) {
+    newHtmlLines.push(
+      line.replace("page-ready", `page-ready-${duplicationIdx}`)
+    );
+  } else if (line.includes("page-reveal")) {
+    newHtmlLines.push(
+      line.replace("page-reveal", `page-reveal-${duplicationIdx}`)
+    );
+  } else if (line.includes(insertEmojiMarker)) {
+    newHtmlLines.push(chosenEmojis[duplicationIdx]);
+  } else {
+    newHtmlLines.push(line);
+  }
+
+  curLineIdx += 1;
+}
 
 // write out dist file
-const newHtmlStr = htmlLines.join("\n");
+const newHtmlStr = newHtmlLines.join("\n");
 fs.mkdirSync(distDir);
 fs.writeFileSync(distHtmlFile, newHtmlStr, "utf-8");
 fs.writeFileSync(distStylesCSSFile, srcStylesStr, "utf-8");
@@ -75,4 +84,27 @@ function randBetween(from, to) {
 }
 function randElement(arr) {
   return arr[randBetween(0, arr.length - 1)];
+}
+function generateRowsHtmlLines(chosenEmoji) {
+  const totalCells = 100;
+  let numCells = 0;
+  const newLinesToAdd = [];
+
+  while (numCells < totalCells) {
+    // add random new cells between 4 and 9, unless that would put us over 100
+    const newCells = Math.min(randBetween(6, 9), totalCells - numCells);
+    newLinesToAdd.push('      <div class="row">');
+    for (let i = 0; i < newCells; i++) {
+      const cellLabel = numCells + i + 1;
+      const cellEmoji = cellLabel % 9 === 0 ? chosenEmoji : randElement(emojis);
+      newLinesToAdd.push('        <div class="cell">');
+      newLinesToAdd.push(`          <div class="emoji">${cellEmoji}</div>`);
+      newLinesToAdd.push(`          <div class="label">${cellLabel}</div>`);
+      newLinesToAdd.push("        </div>");
+    }
+    newLinesToAdd.push("      </div>");
+    numCells += newCells;
+  }
+
+  return newLinesToAdd;
 }

@@ -1,7 +1,3 @@
 # CSS Mind Reader
 
-- create base html with emojis and grid, mobile first
-- create instruction steps for user
-- add random triggers
-- polish
-- add different effects
+This is a silly side project that gives the illusion of being able to read a users mind, without a single line of javascript.
